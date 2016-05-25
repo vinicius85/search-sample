@@ -1,0 +1,19 @@
+<dataConfig>
+    <dataSource type="JdbcDataSource"
+                driver="com.mysql.jdbc.Driver" 
+                url="jdbc:mysql://localhost:3306/news" 
+                user="root" 
+                password="root" />
+        <document>
+            <entity name="news" 
+                query="select id,title,content,author,tags,category,image from article">
+                <field column="id" name="id" />
+                <field column="title" name="title" />
+                <field column="content" name="content" />
+                <field column="author" name="author" />
+                <field column="tags" name="tags" />
+                <field column="category" name="category" />
+                <field column="image" name="image" />
+            </entity>
+        </document>
+</dataConfig>

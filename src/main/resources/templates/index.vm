@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="/css/custom.css" rel="stylesheet" media="screen">
+	
+	<script type="text/javascript" src="/js/angular.min.js"></script>
+	<script type="text/javascript" src="/app/app.js"></script>
+	<script type="text/javascript" src="/app/services.js"></script>
+	<script type="text/javascript" src="/app/controllers.js"></script>
+</head>
+
+<body ng-app="myApp">
+	<div id="principal" class="container-narrow">
+		
+	  	#parse("logged-header.vm")
+	  	
+	  	<div class="jumbotron">
+		
+		<h1>CrossSearch</h1>
+		<h2>Your brand new News</h2>
+		<hr>
+		
+			<div id="formulario" ng-controller="SearchController as ctrl" class="container">
+		
+					<form name="input" action="/news/searchForm" method="get">
+	
+						<input class="input-medium search-query" style="width:500px" type="text" id="queryInput" name="q" placeholder="Search" value=""	></input>
+						<br><br>
+						<input type="button" id="searchButton" class="btn btn-large btn-primary" name="compute" value="Search!" ng-click="articles=ctrl.findArticles()"/>
+					</form>
+					
+					<hr>
+    				<div class="row-fluid">
+				    	<div ng-repeat="article in articles" class="span3">
+          					<img class="img-circle" src="{{article.image}}" alt="{{article.title}}" height="100" width="100">
+          					<h2>{{article.title}}</h2>
+          					<p>{{article.content.substring(0,120)}}...</p>
+          					<p><a class="btn btn-small btn-primary" href="/news/article/{{article.id}}">Read article &raquo;</a></p>
+        				</div>
+					</div>
+			</div>	
+			
+    	</div>
+			
+		</div>
+		
+
+		</div>
+	
+	    <script src="js/bootstrap.min.js"></script>
+	    <script src="http://code.jquery.com/jquery.js"></script>
+</body>
+
+</html>

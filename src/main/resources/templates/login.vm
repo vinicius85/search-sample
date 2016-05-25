@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+    	<link href="css/bootstrap.min.css" rel="stylesheet">
+    	<link href="css/signin.css" rel="stylesheet">
+    	<link href="css/custom.css" rel="stylesheet">
+        <title>Login - News</title>
+    </head>
+    <body>
+    <div id="principal" class="container-narrow">
+		<div class="masthead">
+	        <ul class="nav nav-pills pull-right">
+	          <li class="active"><a href="/">Home</a></li>
+	        </ul>
+	        <h3 class="muted">CrossSearch</h3>
+	  	</div>
+        <form class="form-signin" action="/login" method="post">
+            <div><label> User Name : <input type="text" name="username" class="form-control"/> </label></div>
+            <div><label> Password: <input type="password" name="password" class="form-control"/> </label></div>
+            <div><input type="submit" value="Sign In" class="btn btn-lg btn-primary btn-block"/></div>
+        </form>
+    </body>
+</html>

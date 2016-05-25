@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="/css/custom.css" rel="stylesheet" media="screen">
+</head>
+
+<body>
+
+	<div id="principal" class="container-narrow">
+		
+			#parse("logged-header.vm")
+		  	
+		  	<div class="jumbotron">
+			
+			<hr>
+			<h1>CrossSearch</h1>
+			<h2>Your brand new News</h2>
+
+	
+		<div id="formulario" class="form-group">
+	
+				<form name="input" action="/backoffice/saveArticle" method="POST">
+
+					Title: <input class="form-control" type="text" id="title" name="title"/>
+					<br/>
+					Author: <input class="form-control" type="text" id="author" name="author"/>
+					<br/>
+					Content: <textarea class="form-control" id="content" name="content"></textarea>
+					<br/>
+					Category: <input class="form-control" type="text" id="category" name="category"/>
+					<br/>
+					Tags: <input class="form-control" type="text" id="tags" name="tags"/>
+					<br/>
+					Image location: <input class="form-control" type="text" id="image" name="image"/>
+					
+					<br><br>
+					<input class="btn btn-large btn-primary" type="submit" name="compute" value="Save">
+				</form>
+		</div>
+	</div>
+</body>
+
+</html>

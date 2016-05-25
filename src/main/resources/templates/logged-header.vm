@@ -1,0 +1,15 @@
+  	<div class="masthead">
+	    <ul class="nav nav-pills pull-right">
+	      <li class="active"><a href="/">Home</a></li>
+	      #if($roles.contains("ROLE_ADMIN"))
+	       	<li class="active"><a href="/backoffice/createArticle">Create article</a></li>
+	      #end
+	      #if($!username)
+	      	<li>Hi, $username<a href="/logout">(Logout)</a></li>
+	      #else
+	      	<li><a href="/login">Login</a></li>
+	      #end
+	 
+	    </ul>
+	    <h3 class="muted">CrossSearch</h3>
+	</div>
